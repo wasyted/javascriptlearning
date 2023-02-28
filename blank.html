@@ -6,9 +6,40 @@
 </head>
 <body>
     <script>
-
+        // We obtain rock, paper or scissors randomly from this function using math random:
         function getComputerChoice(){
-
+            var number = Math.random();
+            var choice = "";
+            if (number > 0.6) 
+                    choice = "rock";
+            if (number < 0.3)
+                    choice = "paper";
+            if (number < 0.6 && number > 0.3)
+                    choice = "scissors";
+            console.log(number)
+            return choice
+        }
+        function game(playerSelection,computerSelection){
+            var winner = "";
+            if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "scissors")
+                winner = "player";
+            if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "scissors")
+                winner = "computer";
+            if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "scissors")
+                winner = "draw";
+            if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "rock")
+                winner = "draw";
+            if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "rock")
+                winner = "player";
+            if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "rock")
+                winner = "computer";
+            if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "paper")
+                winner = "computer";
+            if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "paper")
+                winner = "draw";
+            if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "paper")
+                winner = "player";
+            return winner
         }
 
     </script>
