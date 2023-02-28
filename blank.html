@@ -19,29 +19,40 @@
             console.log(number)
             return choice
         }
-        function game(playerSelection,computerSelection){
+        function playRound(playerChoice,computerChoice){
             var winner = "";
-            if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "scissors")
-                winner = "player";
-            if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "scissors")
-                winner = "computer";
-            if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "scissors")
-                winner = "draw";
-            if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "rock")
-                winner = "draw";
-            if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "rock")
-                winner = "player";
-            if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "rock")
-                winner = "computer";
-            if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "paper")
-                winner = "computer";
-            if (playerSelection.toLowerCase() == "paper" && computerSelection.toLowerCase() == "paper")
-                winner = "draw";
-            if (playerSelection.toLowerCase() == "scissors" && computerSelection.toLowerCase() == "paper")
-                winner = "player";
+            if (playerChoice.toLowerCase() == "rock" && computerChoice.toLowerCase() == "scissors")
+                winner = "You won, rock beats scissors!";
+            if (playerChoice.toLowerCase() == "paper" && computerChoice.toLowerCase() == "scissors")
+                winner = "You lose, scissors beats paper!";
+            if (playerChoice.toLowerCase() == "scissors" && computerChoice.toLowerCase() == "scissors")
+                winner = "It's a DRAW!";
+            if (playerChoice.toLowerCase() == "rock" && computerChoice.toLowerCase() == "rock")
+                winner = "It's a DRAW!";
+            if (playerChoice.toLowerCase() == "paper" && computerChoice.toLowerCase() == "rock")
+                winner = "You won, paper beats rock!";
+            if (playerChoice.toLowerCase() == "scissors" && computerChoice.toLowerCase() == "rock")
+                winner = "You lose, rock beats scissors!";
+            if (playerChoice.toLowerCase() == "rock" && computerChoice.toLowerCase() == "paper")
+                winner = "You lose, paper beats rock!";
+            if (playerChoice.toLowerCase() == "paper" && computerChoice.toLowerCase() == "paper")
+                winner = "It's a DRAW!";
+            if (playerChoice.toLowerCase() == "scissors" && computerChoice.toLowerCase() == "paper")
+                winner = "You won, scissors beats paper!";
             return winner
         }
 
+        function getPlayerChoise(){
+            const input = prompt("Rock, Paper or Scissors?")
+            alert(`You chose ${input}`)
+            return input
+        }
+        function game(){
+            for (let i = 0; i < 5; i++){
+                console.log(playRound(getPlayerChoise,getComputerChoice))
+            }
+        }
+        
     </script>
 </body>
 </html>
