@@ -16,7 +16,6 @@
                     choice = "paper";
             if (number < 0.6 && number > 0.3)
                     choice = "scissors";
-            console.log(number)
             return choice
         }
         function playRound(playerChoice,computerChoice){
@@ -49,7 +48,8 @@
         }
         function game(){
             for (let i = 0; i < 5; i++){
-                console.log(playRound(getPlayerChoise(),getComputerChoice()))
+                playRound(getPlayerChoise(),getComputerChoice())
+                
             }
         }
         
