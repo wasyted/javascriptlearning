@@ -8,14 +8,8 @@
     <script>
         // We obtain rock, paper or scissors randomly from this function using math random:
         function getComputerChoice(){
-            var number = Math.random();
-            var choice = "";
-            if (number > 0.6) 
-                    choice = "rock";
-            if (number < 0.3)
-                    choice = "paper";
-            if (number < 0.6 && number > 0.3)
-                    choice = "scissors";
+            let options = ["rock","paper","scissors"]
+            const choice = array[Math.floor(Math.random() * array.length)];
             return choice
         }
         function playRound(playerChoice,computerChoice){
@@ -56,4 +50,3 @@
     </script>
 </body>
 </html>
-
