@@ -35,14 +35,14 @@
             return alert(winner)
         }
 
-        function getPlayerChoise(){
+        function getPlayerChoice(){
             const input = prompt("Rock, Paper or Scissors?")
             alert(`You chose ${input}`)
             return input
         }
         function game(){
             for (let i = 0; i < 5; i++){
-                playRound(getPlayerChoise(),getComputerChoice())
+                playRound(getPlayerChoice(),getComputerChoice())
                 
             }
         }
